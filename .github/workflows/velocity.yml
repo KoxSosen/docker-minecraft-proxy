@@ -2,7 +2,7 @@ name: Build Velocity
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "build" ]
     paths:
       - velocity/**
       - bin/**
