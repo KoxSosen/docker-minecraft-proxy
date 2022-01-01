@@ -13,8 +13,8 @@ docker buildx build \
   --build-arg "RUNTIME=$RUNTIME_IMAGE" \
   --build-arg "RUNTIME_NAME=$RUNTIME_NAME" \
   --build-arg "VELOCITY_VERSION=$version" \
-  --build-arg "VELOCITY_BUILD=$build"
-  --build-arg "VELOCITY_SHA256=$hash"
+  --build-arg "VELOCITY_BUILD=$build" \
+  --build-arg "VELOCITY_SHA256=$hash" \
   --tag "$REPOSITORY:velocity-$version-$RUNTIME_NAME" \
   --tag "$REPOSITORY:velocity-$RUNTIME_NAME" \
   --cache-from "type=registry,ref=$REPOSITORY:velocity-$version-$RUNTIME_NAME" \
@@ -23,3 +23,4 @@ docker buildx build \
   --platform "$RUNTIME_PLATFORM" \
   --push \
   . || exit 1
+  done
